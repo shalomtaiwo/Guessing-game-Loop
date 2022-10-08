@@ -1,4 +1,4 @@
-// Note this is a nodeJS only console program and will not work in Chrome prompt
+// Note this is a nodeJS only console program and will not work with Chrome prompt
 // include prompt sync package to run on replit. 
 // To run locally install:  npm i prompt-sync
 // to run, use this command in the terminal in file directory: node index.js
@@ -10,9 +10,8 @@ const readline = require("readline").createInterface({
 const prompt = require("prompt-sync")();
 
 var maxNum = 2;
-var numRange = Math.floor(Math.random() * maxNum) + 1;
 
-function guessGame(num) {
+function guessGame() {
   readline.question("Enter Player Name: ", (name) => {
     console.log(`Hey there ${name}! \nWelcome to the Guessing game...\n`);
     console.log(
@@ -22,6 +21,7 @@ function guessGame(num) {
     console.log("3...\n2...\n1...");
     var correctNumber = true;
     do {
+      var num = Math.floor(Math.random() * maxNum) + 1;
       const guessed = prompt(`Guess a number between 1 and ${maxNum}: `);
       if (guessed == num) {
         console.log(
@@ -38,4 +38,4 @@ function guessGame(num) {
     readline.close();
   });
 }
-guessGame(numRange);
+guessGame();
