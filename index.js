@@ -11,7 +11,7 @@ const prompt = require("prompt-sync")();
 
 var maxNum = 2;
 
-function guessGame() {
+function guessGame(maxNum) {
   readline.question("Enter Player Name: ", (name) => {
     console.log(`Hey there ${name}! \nWelcome to the Guessing game...\n`);
     console.log(
@@ -38,4 +38,4 @@ function guessGame() {
     readline.close();
   });
 }
-guessGame();
+guessGame(maxNum);
