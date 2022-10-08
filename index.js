@@ -1,3 +1,8 @@
+// Note this is a nodeJS only console program and will not work in Chrome prompt
+// include prompt sync package to run on replit. 
+// To run locally install:  npm i prompt-sync
+// to run, use this command in the terminal in file directory: node index.js
+
 const readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
