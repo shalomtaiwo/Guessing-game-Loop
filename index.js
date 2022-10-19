@@ -10,6 +10,7 @@ const readline = require("readline").createInterface({
 const prompt = require("prompt-sync")();
 
 var maxNum = 2;
+var points = 0;
 
 function guessGame(maxNum) {
   readline.question("Enter Player Name: ", (name) => {
@@ -25,13 +26,16 @@ function guessGame(maxNum) {
       const guessed = prompt(`Guess a number between 1 and ${maxNum}: `);
       if (guessed == num) {
         console.log(
-          `The random number is ${num}\nYou guessed ${guessed}\n\nThat's correct!\n`
+          `You guessed ${guessed}\nThe random number is ${num}\n\nThat's correct!\n`
         );
         maxNum++;
+        points++;
+        console.log(`Points: ${points}\n`);
       } else {
         console.log("Incorrect");
-        console.log(`The random number is ${num}`);
-        console.log("\nGame over...\n\nClosing game...\n");
+        console.log(`The random number is ${num}\n`);
+        console.log(`Final Points: ${points}\n`);
+        console.log("Game over...\n\nClosing game...\n");
         correctNumber = false;
       }
     } while (correctNumber);
